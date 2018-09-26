@@ -15,7 +15,7 @@ public class mainclass {
 		
 		for(;;) {    // Main program loop
 			try {
-				System
+				getInputToInputString(">");
 				InputStringArray = InputString.split(" ");
 				
 				/*
@@ -25,10 +25,14 @@ public class mainclass {
 				 */
 				switch(InputStringArray[0]) {
 				
+				case "q":
+					continue;
+				case "quit":
+					System.exit(0);
+					break;
 					
 				default:
-					System.out.print("Unrecognized command: \'" + 
-				InputStringArray[0] + "\'\nTry using 'man' to get commands\n");
+					System.out.print("I beg your pardon?");
 					break;
 				}
 				
@@ -37,5 +41,10 @@ public class mainclass {
 				System.out.print("ERROR: Unhandled exception thrown\n");
 			}
 		}
+	}
+	
+	public static void getInputToInputString(String text) throws IOException {
+		System.out.print(text);
+		InputString = reader.readLine();
 	}
 }
