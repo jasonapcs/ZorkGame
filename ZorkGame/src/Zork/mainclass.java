@@ -1,8 +1,10 @@
 package Zork;
 
 import java.io.BufferedReader;
+import java.io.Console;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import asg.cliche.*;
 
 public class mainclass {
 	
@@ -11,37 +13,22 @@ public class mainclass {
 	static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	static location[] locations;
 	
-	public static void main(String[] args) {
-		System.out.println("CONSOLE TESTING ENVIRONMENT\n");
+	static final String gameInfo = ""
+			+ "(not) ZORK\n"
+			+ "Not Copyrighted by Infocom, Inc.\n"
+			+ "ZORK is a registered trademark of Infocom, Inc.\n"
+			+ "My use of it should fall under fair use\n";
+	
+	@Command
+	public void quit(){
+		System.exit(0);
+	}
+	
+	
+	public static void main(String[] args) throws IOException {
+		System.out.println(gameInfo);
 		
-		for(;;) {    // Main program loop
-			try {
-				getInputToInputString(">");
-				InputStringArray = InputString.split(" ");
-				
-				/*
-				 * Begins parsing commands
-				 * Tests which command in first position of InputStringArray
-				 * Then passes control to specialized function 
-				 */
-				switch(InputStringArray[0]) {
-				
-				case "q":
-					continue;
-				case "quit":
-					System.exit(0);
-					break;
-					
-				default:
-					System.out.print("I beg your pardon?");
-					break;
-				}
-				
-			}
-			catch(Exception e) {
-				System.out.print("ERROR: Unhandled exception thrown\n");
-			}
-		}
+		ShellFactory.createConsoleShell("", "NotZork", new mainclass()).commandLoop();;
 	}
 	
 	public static void getInputToInputString(String text) throws IOException {

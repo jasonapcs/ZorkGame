@@ -7,13 +7,14 @@ public abstract class location {
 	public items[] Items;
 	public creature[] Creatures;
 	public String locName;
-	public int x;
-	public int y;
-	public int z;
+	public long x;
+	public long y;
+	public long z;
 	
 	
 	
-	/*                       y       z
+	/*
+	 *                       y       z
 	 *                       |     _-
 	 *                       |   _-
 	 * 	                     | _-
