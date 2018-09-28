@@ -10,7 +10,9 @@ public abstract class location {
 	public long x;
 	public long y;
 	public long z;
-	
+	public long subx;
+	public long suby;
+	public long subz;
 	
 	
 	/*
