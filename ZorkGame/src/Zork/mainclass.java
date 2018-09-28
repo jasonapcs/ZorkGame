@@ -9,6 +9,7 @@ public class mainclass {
 	static String InputString;
 	static String[] InputStringArray;
 	static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+	static location[] locations;
 	
 	public static void main(String[] args) {
 		System.out.println("CONSOLE TESTING ENVIRONMENT\n");
