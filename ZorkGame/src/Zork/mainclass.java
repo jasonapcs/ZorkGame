@@ -12,6 +12,7 @@ public class mainclass {
 	static String[] InputStringArray;
 	static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	static location[] locations;
+	static int currentLoc = 0;
 	
 	static final String gameInfo = ""
 			+ "(not) ZORK\n"
@@ -24,6 +25,10 @@ public class mainclass {
 		System.exit(0);
 	}
 	
+	@Command
+	public void look() {
+		locations[currentLoc].look();
+	}
 	
 	public static void main(String[] args) throws IOException {
 		System.out.println(gameInfo);
