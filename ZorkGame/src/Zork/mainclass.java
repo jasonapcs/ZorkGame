@@ -30,6 +30,11 @@ public class mainclass {
 		locations[currentLoc].look();
 	}
 	
+	@Command
+	public void move(Directions d) {
+		locations[currentLoc].move(d);
+	}
+	
 	public static void main(String[] args) throws IOException {
 		System.out.println(gameInfo);
 		
